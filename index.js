@@ -40,4 +40,5 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/g/', (req, res) => res.json({method: "こんにちは、getさん"})) // 追加
   .post('/p/', (req, res) => res.json({method: "こんにちは、postさん"})) // 追加
+  .post("/hook/", (req, res) => res.json({ test: "hook" }))// 追加
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
