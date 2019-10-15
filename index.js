@@ -120,3 +120,24 @@ async function echoman(ev) {
     text: `${pro.displayName}さん、今「${ev.message.text}」って言いました？`
   })
 } 
+
+// 追加
+//event.message.textがユーザーから送られてきた文字列
+//client.replyMessage()でBOTのリプライになります。
+function handleEvent(event) {
+  if (event.type !== 'message' || event.message.type !== 'text') {
+    return Promise.resolve(null);
+  }
+
+  let replyText = '';
+  if(event.message.text === 'こんにちは'){
+    replyText = '今はこんばんわの時間';
+  }else{
+    replyText = 'すき';
+  }
+
+  return client.replyMessage(event.replyToken, {
+    type: 'text',
+    text: replyText
+  });
+}
