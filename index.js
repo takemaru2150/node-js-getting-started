@@ -113,13 +113,13 @@ function lineBot(req, res) {
 }
 
 // 追加
-async function echoman(ev) {
-  const pro =  await client.getProfile(ev.source.userId);
-  return client.replyMessage(ev.replyToken, {
-    type: "text",
-    text: `${pro.displayName}さん、今「${ev.message.text}」って言いました？`
-  })
-} 
+// async function echoman(ev) {
+//   const pro =  await client.getProfile(ev.source.userId);
+//   return client.replyMessage(ev.replyToken, {
+//     type: "text",
+//     text: `${pro.displayName}さん、今「${ev.message.text}」って言いました？`
+//   })
+// } 
 
 // 追加
 //event.message.textがユーザーから送られてきた文字列
